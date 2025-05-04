@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript UI Tasks</title>
+</head>
+<body>
+
+
+  <h3>Task 1: Button Click Event</h3>
+  <button onclick="task1()">BUTTON CLICKED</button>
+
+  <h3>Task 2: Sum of Two Numbers</h3>
+  <button onclick="task2()">Sum:30</button>
+
+  <h3>Task 3: Log Input Value</h3>
+  <input type="text" id="task3Input" placeholder="Type something..." />
+  <button onclick="task3()">Log Input</button>
+
+  <h3>Task 4: Display Input in Paragraph</h3>
+  <input type="text" id="task4Input" placeholder="Type here..." />
+  <button onclick="task4()">Display</button>
+  <p id="task4Output"></p>
+
+  <h3>Task 5: OnChange Event</h3>
+  <input type="text" id="task5Input" onchange="task5()" placeholder="Change and blur..." />
+  <h1 id="task5Output"></h1>
+
+  <h3>Task 6: Double Click Event</h3>
+  <button ondblclick="task6()">Double Click Me</button>
+  <h2 id="task6Output"></h2>
+
+  <h3>Task 7: Mouse Events</h3>
+  <div id="task7Div" style="width:200px; height:100px; background-color:lightgray; text-align:center; line-height:100px;">
+    Hover Over Me
+  </div>
+  <p id="task7Output"></p>
+
+  <h3>Task 8: Keyboard Events</h3>
+  <input type="text" id="task8Input" onkeydown="task8Down()" onkeyup="task8Up()" placeholder="Type here..." />
+
+  <script>
+
+    function task1() {
+      console.log("Button Clicked!");
+    }
+
+    
+    function task2() {
+      let num1 = 10;
+      let num2 = 20;
+      console.log("Sum: " + (num1 + num2));
+    }
+
+
+    function task3() {
+      let input = document.getElementById("task3Input").value;
+      console.log("Input Value: " + input);
+    }
+
+    
+    function task4() {
+      let input = document.getElementById("task4Input").value;
+      document.getElementById("task4Output").innerHTML = input;
+    }
+
+    
+    function task5() {
+      let input = document.getElementById("task5Input").value;
+      document.getElementById("task5Output").innerText = "Input Changed: " + input;
+    }
+
+    
+    function task6() {
+      document.getElementById("task6Output").innerText = "Button was double-clicked!";
+    }
+
+    
+    const div = document.getElementById("task7Div");
+    const output = document.getElementById("task7Output");
+
+    div.addEventListener("mouseenter", () => {
+      output.innerText = "Mouse entered!";
+    });
+
+    div.addEventListener("mouseleave", () => {
+      output.innerText = "Mouse left!";
+    });
+
+    
+    function task8Down() {
+      console.log("Key pressed!");
+    }
+
+    function task8Up() {
+      console.log("Key released!");
+    }
+  </script>
+
+</body>
+</html>
